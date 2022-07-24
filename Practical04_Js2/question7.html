@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question7</title>
+    <style>
+        .FormContainer {
+            background-color: rgb(247, 247, 247);
+            margin: auto;
+            padding: 15px 0 150px 0;
+ 
+            
+        }
+
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+
+
+        #submit {
+            background-color: rgb(45, 189, 35);
+            color: white;
+            margin: 10px 0 10px 0;
+            height: 40px;
+            width: 120px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Available hotel packages</h1>
+    
+    <div class="FormContainer">
+        <form action="" id="Form">
+            <input type="checkbox" id="package1" name="package1"  >
+            <label for="package1">Wedding Package</label> <br>
+
+            <input type="checkbox" id="package2" name="package2" >
+            <label for="package2">Birthday Package</label> <br>
+
+            <input type="checkbox" id="package3" name="package3"  >
+            <label for="package3">Normal Function Package</label> <br>
+
+            <input type="checkbox" id="package4" name="package4" >
+            <label for="package4">Day out Package</label> <br>
+
+            <input type="submit" value="Submit" id="submit"></input>
+
+        </form>
+    </div>
+
+    <script>  
+        var checkbox = document.getElementsByTagName("input");
+
+        for(let i=0; i<checkbox.length; i++){
+
+            checkbox[i].addEventListener("change",e=>{
+
+                if(e.target.checked){
+                    checkbox[i].checked = true
+                    for(let j=0; j<checkbox.length; j++){
+                        if(j!=i){
+                            checkbox[j].disabled = true;
+                        }
+                    }
+                }else{
+                    for(let j=0; j<checkbox.length; j++){
+                        checkbox[j].disabled = false;
+                    }
+                }
+            })
+        }
+        </script>
+
+</body>
+
+</html>

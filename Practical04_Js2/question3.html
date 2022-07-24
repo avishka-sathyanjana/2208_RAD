@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question3</title>
+    <style>
+        .FormContainer {
+            background-color: rgb(247, 247, 247);
+            margin: auto;
+            padding: 150px 0 150px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin: 10px 0 10px 0;
+            padding-inline-start: 10px;
+            height: 50px;
+            width: 275px;
+            border-radius: 10px;
+            border: solid 1px black
+        }
+
+        #submit {
+            background-color: rgb(45, 189, 35);
+            color: white;
+            margin: 10px 0 10px 0;
+            height: 40px;
+            width: 120px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="FormContainer">
+        <form action="" id="Form">
+            <label>Name: </label>
+            <input type="text" name="Uname" id="name" placeholder="Insert a name...">
+            <lable>Birthday:</lable>
+            <input type="text" name="Ubirthday" id="birthday" placeholder="Insert birthday...">
+
+            <input type="submit" value="Click" id="submit" onclick="checkValid()"></input>
+
+        </form>
+    </div>
+
+    <script>
+        function checkValid() {
+
+            let name = document.getElementById("name").value;
+            let town = document.getElementById("birthday").value
+
+            if (name && town) {
+                alert("Name is " + name + "\nBirthday is " + town);
+            }
+            else {
+                alert("Please enter details")
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

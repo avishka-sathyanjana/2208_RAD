@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4</title>
+    <style>
+        .FormContainer {
+            background-color: rgb(247, 247, 247);
+            margin: auto;
+            padding: 150px 0 150px 0;
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        form {
+            display: flex;
+
+        }
+
+        input {
+            margin: 10px 0 10px 0;
+            padding-inline-start: 10px;
+            height: 50px;
+            width: 275px;
+            border-radius: 10px;
+            border: solid 1px black
+        }
+
+        #button1 {
+            background-color: rgb(45, 189, 35);
+            color: white;
+            margin: 10px 0 10px 0;
+            height: 40px;
+            width: 120px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="FormContainer">
+
+        <label>width: </label>
+        <input type="text" name="width" id="width" placeholder="Insert a width...">
+        <lable>height:</lable>
+        <input type="text" name="height" id="height" placeholder="Insert a height...">
+        <input type="submit" value="Find Area" class="button" id="button1" onclick="calArea()">
+        <p id="displayArea"></p>
+    </div>
+
+    <script>
+        function calArea() {
+
+            let width = document.querySelector("#width");
+            let height = document.querySelector("#height");
+            let area = width.value * height.value;
+            let displayArea = document.querySelector("#displayArea");
+
+            displayArea.innerHTML = "Area of the rectangle is " + area + "cm^2";
+
+        }
+    </script>
+
+</body>
+
+</html>

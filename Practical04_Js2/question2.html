@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question2</title>
+    <style>
+        .timeContainer {
+            background-color: rgb(247, 247, 247);
+            margin: auto;
+            padding: 150px 0 150px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: rgb(45, 189, 35);
+            color: white;
+            margin: 10px 0 10px 0;
+            height: 40px;
+            width: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeContainer">
+        <form action="" id="timeForm">
+            <label id="currentTime"></label>
+            <button id="remainTime"></button>
+        </form>
+
+</body>
+
+<script>
+    let currentTime = document.getElementById("currentTime");
+    let remainingTime = document.getElementById("remainTime");
+
+    function DisplayTimes() {
+        let time = new Date();
+
+        if (time.getHours() <= 12) {
+            currentTime.innerHTML = "Now the time is " + time.getHours() + "." + time.getMinutes() + " am"
+        }
+        else {
+            currentTime.innerHTML = "Now the time is " + (time.getHours() - 12) + "." + time.getMinutes() + " pm"
+        }
+
+        remainTime.innerHTML = "Remains " + (24 - time.getHours() - 1) + " hours more..."
+
+    }
+    DisplayTimes();
+    window.onload = change;
+</script>
+
+</html>
